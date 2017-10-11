@@ -1,6 +1,6 @@
 # LSMiniDB
 
-**LSMiniDB** is a simple and minimalistic database. Easy to configure from code. All database operations (insert/select/update/delete) are performed with NSDictionary objects and are asynchronous so they do not block the main thread.
+**LSMiniDB** is a simple to use and minimalistic database. Easy to configure from code. All database operations (insert/select/update/delete) are performed with NSDictionary objects asynchronously on a background thread.
 
 ## Configuring database model and storage
 
@@ -25,11 +25,12 @@
 ## Usage examples
 
 ```objc
-// insert
 NSDictionary *user = @{ @"uuid" : [NSUUID UUID].UUIDString,
                         @"name" : @"John",
                         @"score" : @55,
                         @"date" : [NSDate new] };
+
+// insert
 [[LSMiniDB defaultInstance] insertObject:user table:@"user" completion:^{
     NSLog(@"inserted user");
 }];
