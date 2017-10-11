@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qmR-A7-Txj">
+                                <rect key="frame" x="141" y="28" width="92" height="240"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qCS-4g-gUh">
+                                        <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                        <state key="normal" title="Insert user"/>
+                                        <connections>
+                                            <action selector="insertUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IM5-sc-Zwq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z51-cP-Pa7">
+                                        <rect key="frame" x="0.0" y="30" width="92" height="30"/>
+                                        <state key="normal" title="Insert users"/>
+                                        <connections>
+                                            <action selector="insertUsersAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M1P-gq-tCT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Wd-l7-J68">
+                                        <rect key="frame" x="0.0" y="60" width="92" height="30"/>
+                                        <state key="normal" title="Select user"/>
+                                        <connections>
+                                            <action selector="selectUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QWI-0q-1JK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Ss-oF-nul">
+                                        <rect key="frame" x="0.0" y="90" width="92" height="30"/>
+                                        <state key="normal" title="Select users"/>
+                                        <connections>
+                                            <action selector="selectUsersAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2La-eu-ihf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6lK-dl-UB9">
+                                        <rect key="frame" x="0.0" y="120" width="92" height="30"/>
+                                        <state key="normal" title="Update user"/>
+                                        <connections>
+                                            <action selector="updateUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FyG-3m-Lt1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-qc-WQY">
+                                        <rect key="frame" x="0.0" y="150" width="92" height="30"/>
+                                        <state key="normal" title="Update users"/>
+                                        <connections>
+                                            <action selector="updateUsersAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HXF-Dz-qxZ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Klg-hQ-m5I">
+                                        <rect key="frame" x="0.0" y="180" width="92" height="30"/>
+                                        <state key="normal" title="Delete user"/>
+                                        <connections>
+                                            <action selector="deleteUserAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XUg-Tw-LkO"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wfM-TJ-e5Z">
+                                        <rect key="frame" x="0.0" y="210" width="92" height="30"/>
+                                        <state key="normal" title="Delete users"/>
+                                        <connections>
+                                            <action selector="deleteUsersAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rXY-YZ-ytr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qmR-A7-Txj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="We4-dj-QJa"/>
+                            <constraint firstItem="qmR-A7-Txj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="t4r-0y-Qde"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+</document>
