@@ -21,29 +21,109 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
+/**
+ LSMiniDB is a simple to use and minimalistic database. Easy to configure from code.
+ All database operations (insert/select/update/delete) are performed with NSDictionary
+ objects asynchronously on a background thread.
+ */
 @interface LSMiniDB : NSObject
 
+/**
+ Returns default instance.
+
+ @return Default instance.
+ */
 + (instancetype)defaultInstance;
 
+/**
+ Configures database with tables model and file name.
+
+ @param model Model describing tables in the database.
+ @param fileName Name of the file with the database.
+ */
 - (void)configureWithModel:(NSDictionary *)model fileName:(NSString *)fileName;
 
+/**
+ Inserts an object into specified table.
+
+ @param object Object to insert.
+ @param table Name of the table.
+ @param completion Completion block.
+ */
 - (void)insertObject:(NSDictionary *)object table:(NSString *)table completion:(void (^)(void))completion;
 
+/**
+ Inserts many objects into specified table.
+
+ @param objects Array of objects to insert.
+ @param table Name of the table.
+ @param completion Completion block.
+ */
 - (void)insertObjects:(NSArray<NSDictionary *> *)objects table:(NSString *)table completion:(void (^)(void))completion;
 
+/**
+ Reads all objects from specified table.
+
+ @param table Name of the table.
+ @param completion Completion block.
+ */
 - (void)selectObjectsFromTable:(NSString *)table completion:(void (^)(NSArray<NSDictionary *> *objects))completion;
 
+/**
+ Reads objects from specified table with optional predicate.
+
+ @param table Name of the table.
+ @param predicate Predicate used to find objects in the database.
+ @param completion Completion block.
+ */
 - (void)selectObjectsFromTable:(NSString *)table predicate:(NSPredicate *)predicate completion:(void (^)(NSArray<NSDictionary *> *objects))completion;
 
+/**
+ Reads objects from specified table with optional predicate, sort descriptors and limit.
+
+ @param table Name of the table.
+ @param predicate Predicate used to find objects in the database.
+ @param sortDescriptors Sort descriptors.
+ @param limit Maximum number of objects to read.
+ @param completion Completion block.
+ */
 - (void)selectObjectsFromTable:(NSString *)table predicate:(NSPredicate *)predicate sortDescriptors:(NSArray<NSSortDescriptor *> *)sortDescriptors limit:(NSUInteger)limit completion:(void (^)(NSArray<NSDictionary *> *objects))completion;
 
+/**
+ Updates object in specified table.
+
+ @param object New object data.
+ @param table Name of the table.
+ @param predicate Predicate used to find the object in the database.
+ @param completion Completion block.
+ */
 - (void)updateObject:(NSDictionary *)object table:(NSString *)table predicate:(NSPredicate *)predicate completion:(void (^)(void))completion;
 
+/**
+ Updates many objects in specified table.
+
+ @param objects New objects data.
+ @param table Name of the table.
+ @param predicates Predicates used to find objects in the database.
+ @param completion Completion block.
+ */
 - (void)updateObjects:(NSArray<NSDictionary *> *)objects table:(NSString *)table predicates:(NSArray<NSPredicate *> *)predicates completion:(void (^)(void))completion;
 
+/**
+ Deletes all objects from specified table.
+
+ @param table Name of the table.
+ @param completion Completion block.
+ */
 - (void)deleteObjectsFromTable:(NSString *)table completion:(void (^)(void))completion;
 
-- (void)deleteObjectsFromTable:(NSString *)table predicate:(NSPredicate *)predicate completion:(void (^)(void))completion;
+/**
+ Deletes objects from specified table with optional predicate.
 
+ @param table Name of the table.
+ @param predicate Predicate used to find objects to delete.
+ @param completion Completion block.
+ */
+- (void)deleteObjectsFromTable:(NSString *)table predicate:(NSPredicate *)predicate completion:(void (^)(void))completion;
 
 @end
